@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigation_interface_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".navigation_interface"
+    android:background="#232323"
+
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/frame1"
+        android:layout_alignParentTop="true"
+        >
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            app:srcCompat="@drawable/addimage"
+            android:scaleType="centerCrop"
+            />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/lenear1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/frame1"
+        >
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:textAllCaps="true"
+            android:text="Pasan Manohar"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/password"
+            android:text="Hello world"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_horizontal"
+            android:textStyle="italic"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lenear1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/swipe"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round2"
+            android:text="My Uploads"
+            />
+
+        <Button
+            android:id="@+id/check"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round3"
+            android:text="Upload Photos"
+
+            />
+
+        <Button
+            android:id="@+id/remove"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/red_button"
+            android:text="remove account"
+            android:textSize="12dp"
+
+            />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="LOG OUT"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/linear2"
+        android:gravity="center"
+
+        >
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_marginTop="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CAPTURE IT Crew"
+            android:textColor="#ffff"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textSize="10dp"
+            android:text="Powered by "
+            android:textColor="#ffff"
+            />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

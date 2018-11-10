@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/feeds_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.lorentzos.flingswipe.SwipeFlingAdapterView
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="#ffeee9e2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rotation_degrees="15.5"
+        tools:context=".MyActivity"
+        android:transitionName="userImageT"
+        />
+
+    <ProgressBar
+        android:id="@+id/load_swipecards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="240dp"
+
+        />
+
+    <TextView
+        android:id="@+id/user_text_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:text="fsdalflaks"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        />
+
+    <TextView
+        android:id="@+id/user_name_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frame"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="18dp"
+        android:text=""
+        android:textAllCaps="true"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame" />
+
+    <LinearLayout
+        android:id="@+id/swipe_card_buttons_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/user_name_bottom"
+        android:gravity="center_horizontal"
+        >
+
+        <Button
+            android:id="@+id/followButton"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_name_bottom"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="31dp"
+            android:drawableLeft="@drawable/follow_white"
+            android:drawablePadding="17dp"
+            android:background="@drawable/rectangele"
+            android:text="Follow"
+            android:textAlignment="center"
+            android:padding="15dp"
+            android:textColor="#ffff"
+            android:layout_marginBottom="20dp"
+            />
+        <Button
+            android:id="@+id/removeButton"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_name_bottom"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="31dp"
+            android:drawableLeft="@drawable/remove_white"
+            android:drawablePadding="17dp"
+            android:background="@drawable/rectangele"
+            android:text="Remove"
+            android:textAlignment="center"
+            android:padding="15dp"
+            android:textColor="#ffff"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+
+            />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

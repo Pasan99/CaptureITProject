@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#FC7122</color>
+    <color name="colorAccent">#fff</color>
+    <color name="background">#62FF66</color>
+    <color name="btcolor">#FFE300</color>
+    <color name="regbtn">#FC7122</color>
+    <color name="setupback">#FF8A47</color>
+    <color name="theme">#015f5e</color>
+    <color name="redButton">#FE2A2A</color>
+    <color name="lightorange">#FFC35B</color>
+
+</resources>
