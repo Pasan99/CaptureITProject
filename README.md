@@ -8,6 +8,7 @@ messages and photographers/studios can upload photos. Furthermore, by the map (G
 system) customers can book the nearest best photographer to have their photoshoots done.
 
 # Downloads
+<p>Download the Captureit App Apk by clicking this link</p>
 https://github.com/Pasan99/CaptureITProject/raw/master/app-debug.apk
 
 # Screenshots
