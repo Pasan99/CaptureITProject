@@ -1,4 +1,4 @@
-# CaptureITProject
+# CaptureIT Android Application
 CaptureIt Project
 
 This application is buid to enhance the communication between Photographers and customers.CaptureIT mobile application will make a virtual platform where customers can book
