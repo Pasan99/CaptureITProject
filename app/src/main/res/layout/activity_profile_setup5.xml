@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profileSetup5">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout11"
+                android:layout_width="310dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/setup_top_bar_green"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="1 | 2 | 3 | 4. Create Package"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout12"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="290dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/setup_top_bar_grey"
+                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout11"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout11">
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="  |  5  "
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+
+            <ImageView
+                android:id="@+id/coverPhoto_setup5"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="32dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout11"
+                app:srcCompat="@drawable/side_nav_bar" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Cover Photo"
+                android:textColor="#ffff"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/coverPhoto_setup5"
+                app:layout_constraintEnd_toEndOf="@+id/coverPhoto_setup5" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="45dp"
+                android:text="Occupation"
+                app:layout_constraintStart_toStartOf="@+id/coverPhoto_setup5"
+                app:layout_constraintTop_toBottomOf="@+id/coverPhoto_setup5" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/package_occupation"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView53"
+                app:layout_constraintEnd_toEndOf="@+id/coverPhoto_setup5"
+                app:layout_constraintStart_toEndOf="@+id/textView53"
+                app:layout_constraintTop_toTopOf="@+id/textView53" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout6"
+                android:layout_width="0dp"
+                android:layout_height="559dp"
+                android:layout_marginStart="20dp"
+                android:elevation="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/setting_layout_elements"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/package_occupation">
+
+                <TextView
+                    android:id="@+id/bp_textView54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Basic Package"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Photo Count"
+                    app:layout_constraintStart_toStartOf="@+id/bp_textView54"
+                    app:layout_constraintTop_toBottomOf="@+id/bp_textView54" />
+
+                <EditText
+                    android:id="@+id/bp_photo_count"
+                    android:layout_width="181dp"
+                    android:layout_height="21dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView55"
+                    app:layout_constraintStart_toEndOf="@+id/textView55"
+                    app:layout_constraintTop_toTopOf="@+id/textView55" />
+
+                <TextView
+                    android:id="@+id/textView56"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Time Period Hours."
+                    app:layout_constraintEnd_toEndOf="@+id/textView55"
+                    app:layout_constraintStart_toStartOf="@+id/textView55"
+                    app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+                <TextView
+                    android:id="@+id/textView57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="to"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/bp_time_period_start"
+                    app:layout_constraintEnd_toEndOf="@+id/bp_photo_count"
+                    app:layout_constraintStart_toStartOf="@+id/bp_photo_count"
+                    app:layout_constraintTop_toTopOf="@+id/bp_time_period_start" />
+
+                <EditText
+                    android:id="@+id/bp_time_period_start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView56"
+                    app:layout_constraintEnd_toStartOf="@+id/textView57"
+                    app:layout_constraintStart_toStartOf="@+id/bp_photo_count"
+                    app:layout_constraintTop_toTopOf="@+id/textView56" />
+
+                <EditText
+                    android:id="@+id/bp_time_period_end"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView56"
+                    app:layout_constraintEnd_toEndOf="@+id/bp_photo_count"
+                    app:layout_constraintStart_toEndOf="@+id/textView57"
+                    app:layout_constraintTop_toTopOf="@+id/textView56" />
+
+                <TextView
+                    android:id="@+id/textView58"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Diliver Time Days"
+                    app:layout_constraintEnd_toEndOf="@+id/textView56"
+                    app:layout_constraintStart_toStartOf="@+id/textView56"
+                    app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+                <EditText
+                    android:id="@+id/bp_diliver_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView58"
+                    app:layout_constraintEnd_toEndOf="@+id/bp_photo_count"
+                    app:layout_constraintStart_toStartOf="@+id/bp_photo_count"
+                    app:layout_constraintTop_toTopOf="@+id/textView58" />
+
+                <TextView
+                    android:id="@+id/textView59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Action Plan"
+                    app:layout_constraintStart_toStartOf="@+id/textView58"
+                    app:layout_constraintTop_toBottomOf="@+id/textView58" />
+
+                <Switch
+                    android:id="@+id/bp_action_plan_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView59"
+                    app:layout_constraintEnd_toEndOf="@+id/bp_diliver_time"
+                    app:layout_constraintStart_toStartOf="@+id/bp_diliver_time"
+                    app:layout_constraintTop_toTopOf="@+id/textView59" />
+
+                <TextView
+                    android:id="@+id/textView60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Schedule Posts"
+                    app:layout_constraintStart_toStartOf="@+id/textView59"
+                    app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+                <Switch
+                    android:id="@+id/bp_shedule_post_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView60"
+                    app:layout_constraintEnd_toEndOf="@+id/bp_action_plan_switch"
+                    app:layout_constraintStart_toStartOf="@+id/bp_action_plan_switch"
+                    app:layout_constraintTop_toTopOf="@+id/textView60" />
+
+                <TextView
+                    android:id="@+id/textView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Social Media Management"
+                    app:layout_constraintStart_toStartOf="@+id/textView60"
+                    app:layout_constraintTop_toBottomOf="@+id/textView60" />
+
+                <Switch
+                    android:id="@+id/bp_social_media_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView61"
+                    app:layout_constraintEnd_toEndOf="@+id/bp_diliver_time"
+                    app:layout_constraintStart_toEndOf="@+id/textView61"
+                    app:layout_constraintTop_toTopOf="@+id/textView61" />
+
+                <TextView
+                    android:id="@+id/textView62"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Description"
+                    app:layout_constraintStart_toStartOf="@+id/textView61"
+                    app:layout_constraintTop_toBottomOf="@+id/textView61" />
+
+                <EditText
+                    android:id="@+id/bp_package_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView62"
+                    app:layout_constraintEnd_toEndOf="@+id/bp_diliver_time"
+                    app:layout_constraintStart_toStartOf="@+id/bp_diliver_time"
+                    app:layout_constraintTop_toTopOf="@+id/textView62" />
+
+                <EditText
+                    android:id="@+id/bp_package_price"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+
+                    android:background="@drawable/profile_setup_button"
+                    android:ems="10"
+                    android:hint="Price"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView62" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout9"
+                android:layout_width="0dp"
+                android:layout_height="559dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                android:background="@drawable/standard_package"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+
+                <TextView
+                    android:id="@+id/sp_textView54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Standard Package"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/sp_textView55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Photo Count"
+                    app:layout_constraintStart_toStartOf="@+id/sp_textView54"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_textView54" />
+
+                <EditText
+                    android:id="@+id/sp_photo_count"
+                    android:layout_width="181dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/sp_textView55"
+                    app:layout_constraintStart_toEndOf="@+id/sp_textView55"
+                    app:layout_constraintTop_toTopOf="@+id/sp_textView55" />
+
+                <TextView
+                    android:id="@+id/sp_textView56"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Time Period Hours."
+                    app:layout_constraintEnd_toEndOf="@+id/sp_textView55"
+                    app:layout_constraintStart_toStartOf="@+id/sp_textView55"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_textView55" />
+
+                <TextView
+                    android:id="@+id/sp_textView57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="to"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/sp_time_period_start"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_photo_count"
+                    app:layout_constraintStart_toStartOf="@+id/sp_photo_count"
+                    app:layout_constraintTop_toTopOf="@+id/sp_time_period_start" />
+
+                <EditText
+                    android:id="@+id/sp_time_period_start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/sp_textView56"
+                    app:layout_constraintEnd_toStartOf="@+id/sp_textView57"
+                    app:layout_constraintStart_toStartOf="@+id/sp_photo_count"
+                    app:layout_constraintTop_toTopOf="@+id/sp_textView56" />
+
+                <EditText
+                    android:id="@+id/sp_time_period_end"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/sp_textView56"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_photo_count"
+                    app:layout_constraintStart_toEndOf="@+id/sp_textView57"
+                    app:layout_constraintTop_toTopOf="@+id/sp_textView56" />
+
+                <TextView
+                    android:id="@+id/sp_textView58"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Diliver Time Days."
+                    app:layout_constraintEnd_toEndOf="@+id/sp_textView56"
+                    app:layout_constraintStart_toStartOf="@+id/sp_textView56"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_textView56" />
+
+                <EditText
+                    android:id="@+id/sp_diliver_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/sp_textView58"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_photo_count"
+                    app:layout_constraintStart_toStartOf="@+id/sp_photo_count"
+                    app:layout_constraintTop_toTopOf="@+id/sp_textView58" />
+
+                <TextView
+                    android:id="@+id/sp_textView59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Action Plan"
+                    app:layout_constraintStart_toStartOf="@+id/sp_textView58"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_textView58" />
+
+                <Switch
+                    android:id="@+id/sp_action_plan_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/sp_textView59"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_diliver_time"
+                    app:layout_constraintStart_toStartOf="@+id/sp_diliver_time"
+                    app:layout_constraintTop_toTopOf="@+id/sp_textView59" />
+
+                <TextView
+                    android:id="@+id/sp_textView60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Schedule Posts"
+                    app:layout_constraintStart_toStartOf="@+id/sp_textView59"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_textView59" />
+
+                <Switch
+                    android:id="@+id/sp_shedule_post_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/sp_textView60"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_action_plan_switch"
+                    app:layout_constraintStart_toStartOf="@+id/sp_action_plan_switch"
+                    app:layout_constraintTop_toTopOf="@+id/sp_textView60" />
+
+                <TextView
+                    android:id="@+id/sp_textView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Social Media Management"
+                    app:layout_constraintStart_toStartOf="@+id/sp_textView60"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_textView60" />
+
+                <Switch
+                    android:id="@+id/sp_social_media_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/sp_textView61"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_diliver_time"
+                    app:layout_constraintStart_toEndOf="@+id/sp_textView61"
+                    app:layout_constraintTop_toTopOf="@+id/sp_textView61" />
+
+                <TextView
+                    android:id="@+id/sp_textView62"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Description"
+                    app:layout_constraintStart_toStartOf="@+id/sp_textView61"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_textView61" />
+
+                <EditText
+                    android:id="@+id/sp_package_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/sp_textView62"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_diliver_time"
+                    app:layout_constraintStart_toStartOf="@+id/sp_diliver_time"
+                    app:layout_constraintTop_toTopOf="@+id/sp_textView62" />
+
+                <EditText
+                    android:id="@+id/sp_package_price"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/profile_setup_button"
+                    android:ems="10"
+                    android:hint="Price"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_textView62" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/layout88"
+                android:layout_width="0dp"
+                android:layout_height="559dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="16dp"
+                android:elevation="10dp"
+                android:background="@drawable/premium_package"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
+
+                <TextView
+                    android:id="@+id/pp_textView54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Premium Package"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pp_textView55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Photo Count"
+                    app:layout_constraintStart_toStartOf="@+id/pp_textView54"
+                    app:layout_constraintTop_toBottomOf="@+id/pp_textView54" />
+
+                <EditText
+                    android:id="@+id/pp_photo_count"
+                    android:layout_width="181dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/pp_textView55"
+                    app:layout_constraintStart_toEndOf="@+id/pp_textView55"
+                    app:layout_constraintTop_toTopOf="@+id/pp_textView55" />
+
+                <TextView
+                    android:id="@+id/pp_textView56"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Time Period Hours."
+                    app:layout_constraintEnd_toEndOf="@+id/pp_textView55"
+                    app:layout_constraintStart_toStartOf="@+id/pp_textView55"
+                    app:layout_constraintTop_toBottomOf="@+id/pp_textView55" />
+
+                <TextView
+                    android:id="@+id/pp_textView57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="to"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/pp_time_period_start"
+                    app:layout_constraintEnd_toEndOf="@+id/pp_photo_count"
+                    app:layout_constraintStart_toStartOf="@+id/pp_photo_count"
+                    app:layout_constraintTop_toTopOf="@+id/pp_time_period_start" />
+
+                <EditText
+                    android:id="@+id/pp_time_period_start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/pp_textView56"
+                    app:layout_constraintEnd_toStartOf="@+id/pp_textView57"
+                    app:layout_constraintStart_toStartOf="@+id/pp_photo_count"
+                    app:layout_constraintTop_toTopOf="@+id/pp_textView56" />
+
+                <EditText
+                    android:id="@+id/pp_time_period_end"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/pp_textView56"
+                    app:layout_constraintEnd_toEndOf="@+id/pp_photo_count"
+                    app:layout_constraintStart_toEndOf="@+id/pp_textView57"
+                    app:layout_constraintTop_toTopOf="@+id/pp_textView56" />
+
+                <TextView
+                    android:id="@+id/pp_textView58"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Diliver Time Days."
+                    app:layout_constraintEnd_toEndOf="@+id/pp_textView56"
+                    app:layout_constraintStart_toStartOf="@+id/pp_textView56"
+                    app:layout_constraintTop_toBottomOf="@+id/pp_textView56" />
+
+                <EditText
+                    android:id="@+id/pp_diliver_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/pp_textView58"
+                    app:layout_constraintEnd_toEndOf="@+id/pp_photo_count"
+                    app:layout_constraintStart_toStartOf="@+id/pp_photo_count"
+                    app:layout_constraintTop_toTopOf="@+id/pp_textView58" />
+
+                <TextView
+                    android:id="@+id/pp_textView59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Action Plan"
+                    app:layout_constraintStart_toStartOf="@+id/pp_textView58"
+                    app:layout_constraintTop_toBottomOf="@+id/pp_textView58" />
+
+                <Switch
+                    android:id="@+id/pp_action_plan_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/pp_textView59"
+                    app:layout_constraintEnd_toEndOf="@+id/pp_diliver_time"
+                    app:layout_constraintStart_toStartOf="@+id/pp_diliver_time"
+                    app:layout_constraintTop_toTopOf="@+id/pp_textView59" />
+
+                <TextView
+                    android:id="@+id/pp_textView60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Schedule Posts"
+                    app:layout_constraintStart_toStartOf="@+id/pp_textView59"
+                    app:layout_constraintTop_toBottomOf="@+id/pp_textView59" />
+
+                <Switch
+                    android:id="@+id/pp_shedule_post_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/pp_textView60"
+                    app:layout_constraintEnd_toEndOf="@+id/pp_action_plan_switch"
+                    app:layout_constraintStart_toStartOf="@+id/pp_action_plan_switch"
+                    app:layout_constraintTop_toTopOf="@+id/pp_textView60" />
+
+                <TextView
+                    android:id="@+id/pp_textView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Social Media Management"
+                    app:layout_constraintStart_toStartOf="@+id/pp_textView60"
+                    app:layout_constraintTop_toBottomOf="@+id/pp_textView60" />
+
+                <Switch
+                    android:id="@+id/pp_social_media_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/pp_textView61"
+                    app:layout_constraintEnd_toEndOf="@+id/pp_diliver_time"
+                    app:layout_constraintStart_toEndOf="@+id/pp_textView61"
+                    app:layout_constraintTop_toTopOf="@+id/pp_textView61" />
+
+                <TextView
+                    android:id="@+id/pp_textView62"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Description"
+                    app:layout_constraintStart_toStartOf="@+id/pp_textView61"
+                    app:layout_constraintTop_toBottomOf="@+id/pp_textView61" />
+
+                <EditText
+                    android:id="@+id/pp_package_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/e_p_user_name"
+                    android:ems="10"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/pp_textView62"
+                    app:layout_constraintEnd_toEndOf="@+id/pp_diliver_time"
+                    app:layout_constraintStart_toStartOf="@+id/pp_diliver_time"
+                    app:layout_constraintTop_toTopOf="@+id/pp_textView62" />
+
+                <EditText
+                    android:id="@+id/pp_package_price"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/profile_setup_button"
+                    android:ems="10"
+                    android:hint="Price"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pp_textView62" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <Button
+                android:id="@+id/profileSetup5_done_button"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/profile_setup_button"
+                android:text="Next"
+                android:textColor="#ffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/layout88" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+</android.support.constraint.ConstraintLayout>

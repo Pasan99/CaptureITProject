@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/setting_layout_elements"
+    android:elevation="10dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="15dp"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/Booking_profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/profile_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/be_customerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Pasan Manohara"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/Booking_profile_image"
+            app:layout_constraintStart_toStartOf="@+id/Booking_profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/Booking_profile_image" />
+
+        <TextView
+            android:id="@+id/textView86"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Booked"
+            android:textColor="@color/redButton"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Booking_profile_image"
+            app:layout_constraintTop_toTopOf="@+id/Booking_profile_image" />
+
+        <TextView
+            android:id="@+id/be_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="6th January 2018"
+            app:layout_constraintEnd_toEndOf="@+id/textView86"
+            app:layout_constraintStart_toStartOf="@+id/textView86"
+            app:layout_constraintTop_toBottomOf="@+id/textView86" />
+
+        <TextView
+            android:id="@+id/be_occupation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Event Photography"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/be_date"
+            app:layout_constraintStart_toStartOf="@+id/be_date"
+            app:layout_constraintTop_toBottomOf="@+id/be_date" />
+
+        <TextView
+            android:id="@+id/be_packageType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Basic Package"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/be_occupation"
+            app:layout_constraintStart_toStartOf="@+id/be_occupation"
+            app:layout_constraintTop_toBottomOf="@+id/be_occupation" />
+
+        <TextView
+            android:id="@+id/be_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="30dp"
+            android:text="Rs. 3000.00"
+            android:textAlignment="viewEnd"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/be_occupation"
+            app:layout_constraintStart_toStartOf="@+id/be_occupation"
+            app:layout_constraintTop_toBottomOf="@+id/be_packageType" />
+
+        <Button
+            android:id="@+id/be_confirm_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/follow_pressed"
+            android:text="Confirm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/be_cancel_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/be_messageButton"
+            app:layout_constraintTop_toBottomOf="@+id/be_messageButton" />
+
+        <Button
+            android:id="@+id/be_cancel_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/rectangele"
+            android:text="Cancel"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/be_messageButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/be_confirm_button"
+            app:layout_constraintTop_toBottomOf="@+id/be_messageButton" />
+
+        <TextView
+            android:id="@+id/textView89"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="  "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/be_messageButton" />
+
+        <Button
+            android:id="@+id/be_callButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="45dp"
+            android:background="@drawable/profile_setup_button"
+            android:drawableLeft="@drawable/ic_local_phone_white_24dp"
+            android:drawablePadding="40dp"
+            android:paddingLeft="80dp"
+            android:text="call"
+            android:textAlignment="textStart"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/be_price" />
+
+        <Button
+            android:id="@+id/be_messageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/profile_setup_button"
+            android:drawableLeft="@drawable/ic_chat_white_24dp"
+            android:paddingLeft="80dp"
+            android:drawablePadding="40dp"
+            android:textAlignment="textStart"
+            android:text="Message"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="@+id/be_callButton"
+            app:layout_constraintStart_toStartOf="@+id/be_callButton"
+            app:layout_constraintTop_toBottomOf="@+id/be_callButton" />
+
+        <Button
+            android:id="@+id/be_locateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Location"
+            android:textSize="10sp"
+            android:drawablePadding="4dp"
+            android:paddingLeft="6dp"
+            android:drawableLeft="@drawable/location_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView86" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

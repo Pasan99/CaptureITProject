@@ -143,8 +143,8 @@ public class photoUpload extends AppCompatActivity implements View.OnClickListen
         uploadButton.setAnimation(bottom_off);
         upload.setAnimation(top_off);
         constraintLayout.setAnimation(fade_off);
-        startActivity(new Intent(getApplicationContext(), navigation_interface.class));
         finish();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
     }
 
@@ -171,8 +171,8 @@ public class photoUpload extends AppCompatActivity implements View.OnClickListen
                 upload.setAnimation(top_off);
                 constraintLayout.setAnimation(fade_off);
                 dialog.cancel();
-                startActivity(new Intent(getApplicationContext(), navigation_interface.class));
                 finish();
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
             if (imageCOunt < 6 ){
                 Add = 16;
@@ -186,8 +186,8 @@ public class photoUpload extends AppCompatActivity implements View.OnClickListen
             uploadButton.setAnimation(bottom_off);
             upload.setAnimation(top_off);
             constraintLayout.setAnimation(fade_off);
-            startActivity(new Intent(getApplicationContext(), navigation_interface.class));
             finish();
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
 
     }
@@ -235,7 +235,6 @@ public class photoUpload extends AppCompatActivity implements View.OnClickListen
                             upload.setAnimation(top_off);
                             constraintLayout.setAnimation(fade_off);
                             dialog.cancel();
-                            startActivity(new Intent(getApplicationContext(), navigation_interface.class));
                             finish();
                         }
                     }
@@ -276,10 +275,6 @@ public class photoUpload extends AppCompatActivity implements View.OnClickListen
     }
 
 
-    public int divRoundClosest(int n, int d)
-    {
-        return ((n < 0) ^ (d < 0)) ? ((n - d/2)/d) : ((n + d/2)/d);
-    }
 
 
 }

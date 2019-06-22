@@ -3,10 +3,18 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/regbtn</item>
-        <item name="colorPrimaryDark">#000</item>
+        <item name="colorPrimary">#232323</item>
+        <item name="colorPrimaryDark">#232323</item>
         <item name="colorAccent">@color/lightorange</item>
         <item name="android:windowActivityTransitions">true</item>
+
+    </style>
+
+    <style name="myTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. color 01 - #0076a3 color 02 - #0076a3 -->
+        <item name="colorPrimary">#232323</item>
+        <item name="colorPrimaryDark">#232323</item>
+        <item name="colorAccent">@color/lightorange</item>
 
     </style>
 

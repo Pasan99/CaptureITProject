@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aclonica</item>
+        <item>@font/bungee_shade</item>
+        <item>@font/butcherman</item>
+        <item>@font/candal</item>
+        <item>@font/faster_one</item>
+        <item>@font/londrina_solid</item>
+        <item>@font/modak</item>
+    </array>
+</resources>

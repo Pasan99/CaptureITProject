@@ -11,28 +11,24 @@
         android:id="@+id/popup_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangele"
+        android:background="@drawable/setting_layout_elements"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_marginTop="50dp"
         >
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/l"
-            />
+
 
         <TextView
             android:id="@+id/popup_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#ffff"
+            android:textColor="#3f3f3f"
             android:text="Do you really want to delete your account"
             android:textAlignment="center"
             android:textSize="20dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             />
 
         <LinearLayout
@@ -40,7 +36,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:layout_marginBottom="50dp"
             >
 

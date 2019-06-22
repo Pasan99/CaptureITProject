@@ -27,9 +27,8 @@
         android:id="@+id/profile_image3"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="20dp"
-
+        android:layout_marginTop="16dp"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:scaleType="centerCrop"
@@ -45,7 +44,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="28dp"
         android:layout_toRightOf="@+id/profile_image3"
-        android:text="Name"
+        android:text="Hello"
         android:textSize="14dp"
         android:textStyle="bold" />
 
@@ -66,6 +65,19 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="450dp"
         />
+
+    <TextView
+        android:id="@+id/profession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/profile_image3"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="48dp"
+        android:textSize="8sp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@+id/profile_image3"
+        android:text="TextView" />
 
     <LinearLayout
         android:id="@+id/button_layout"
@@ -147,6 +159,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="" />
+
 
 
 </RelativeLayout>

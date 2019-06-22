@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profileSetup3">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout11"
+        android:layout_width="255dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/setup_top_bar_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="1 | 2. Basic Information"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout12"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/setup_top_bar_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout11"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout11">
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="  |  3  |  4  |  5  "
+            android:textColor="#fff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Who are you ?"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout11" />
+
+    <Switch
+        android:id="@+id/eventPhotographer_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView42"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:text="Event Photographer"
+        app:layout_constraintBottom_toBottomOf="@+id/eventPhotographer_switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/eventPhotographer_switch"
+        app:layout_constraintTop_toTopOf="@+id/eventPhotographer_switch" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wedding Photographer"
+        app:layout_constraintBottom_toBottomOf="@+id/weddingPhotographerSwitch"
+        app:layout_constraintStart_toStartOf="@+id/textView42"
+        app:layout_constraintTop_toTopOf="@+id/weddingPhotographerSwitch" />
+
+    <Switch
+        android:id="@+id/weddingPhotographerSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/eventPhotographer_switch"
+        app:layout_constraintTop_toBottomOf="@+id/eventPhotographer_switch" />
+
+    <Switch
+        android:id="@+id/arialPhotographerSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/weddingPhotographerSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/weddingPhotographerSwitch" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arial Photographer"
+        app:layout_constraintBottom_toBottomOf="@+id/arialPhotographerSwitch"
+        app:layout_constraintStart_toStartOf="@+id/textView43"
+        app:layout_constraintTop_toTopOf="@+id/arialPhotographerSwitch" />
+
+    <Switch
+        android:id="@+id/travelPhotographySwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/arialPhotographerSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/arialPhotographerSwitch" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Travel Photographer"
+        app:layout_constraintBottom_toBottomOf="@+id/travelPhotographySwitch"
+        app:layout_constraintStart_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toTopOf="@+id/travelPhotographySwitch" />
+
+    <Switch
+        android:id="@+id/productPhotographerSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/travelPhotographySwitch"
+        app:layout_constraintTop_toBottomOf="@+id/travelPhotographySwitch" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Photographer"
+        app:layout_constraintBottom_toBottomOf="@+id/productPhotographerSwitch"
+        app:layout_constraintStart_toStartOf="@+id/textView47"
+        app:layout_constraintTop_toTopOf="@+id/productPhotographerSwitch" />
+
+    <Switch
+        android:id="@+id/foodPhotographerSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/productPhotographerSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/productPhotographerSwitch" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Photographer"
+        app:layout_constraintBottom_toBottomOf="@+id/foodPhotographerSwitch"
+        app:layout_constraintStart_toStartOf="@+id/textView48"
+        app:layout_constraintTop_toTopOf="@+id/foodPhotographerSwitch" />
+
+    <Switch
+        android:id="@+id/videographerSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/foodPhotographerSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/foodPhotographerSwitch" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Videographer"
+        app:layout_constraintBottom_toBottomOf="@+id/videographerSwitch"
+        app:layout_constraintStart_toStartOf="@+id/textView49"
+        app:layout_constraintTop_toTopOf="@+id/videographerSwitch" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:textSize="12sp"
+        android:text="more videography categories  will be added in the near future"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView50"
+        app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+    <Button
+        android:id="@+id/profileSetup3_nextButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/profile_setup_button"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+</android.support.constraint.ConstraintLayout>

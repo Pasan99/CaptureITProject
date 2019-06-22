@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileSetup6">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout11"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/setup_top_bar_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="1 | 2 | 3 | 4 | 5. Set Availability"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView66"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:text="You Have successfully created the  Package."
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout11"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout11"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout11" />
+
+    <TextView
+        android:id="@+id/textView67"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:text="Set your visibilty on to start your  work."
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView66"
+        app:layout_constraintStart_toStartOf="@+id/textView66"
+        app:layout_constraintTop_toBottomOf="@+id/textView66" />
+
+    <TextView
+        android:id="@+id/textView69"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="19sp"
+        android:text="After you set your availibility on  customers can see your shared location. "
+        app:layout_constraintEnd_toEndOf="@+id/textView67"
+        app:layout_constraintStart_toStartOf="@+id/textView67"
+        app:layout_constraintTop_toBottomOf="@+id/textView67" />
+
+    <TextView
+        android:id="@+id/textView70"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="19sp"
+        android:text="Also they can book you."
+        app:layout_constraintEnd_toEndOf="@+id/textView69"
+        app:layout_constraintStart_toStartOf="@+id/textView69"
+        app:layout_constraintTop_toBottomOf="@+id/textView69" />
+
+    <Button
+        android:id="@+id/setup_location_setup6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:text="Setup your location"
+        android:textColor="#3f3f3f"
+        android:background="@drawable/setting_layout_elements"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout11"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout11"
+        app:layout_constraintTop_toBottomOf="@+id/textView70" />
+
+    <Button
+        android:id="@+id/location_setup6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/setting_layout_elements"
+        android:text="your location"
+        android:textColor="#3f3f3f"
+        app:layout_constraintEnd_toEndOf="@+id/setup_location_setup6"
+        app:layout_constraintStart_toStartOf="@+id/setup_location_setup6"
+        app:layout_constraintTop_toBottomOf="@+id/setup_location_setup6" />
+
+    <Switch
+        android:id="@+id/availability_switch_setup6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView71"
+        app:layout_constraintStart_toEndOf="@+id/textView71"
+        app:layout_constraintTop_toTopOf="@+id/textView71" />
+
+    <TextView
+        android:id="@+id/textView71"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="50dp"
+        android:text="Availability"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/location_setup6"
+        app:layout_constraintTop_toBottomOf="@+id/location_setup6" />
+
+    <Button
+        android:id="@+id/done_button_setup6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/profile_setup_button"
+        android:text="Done"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/location_setup6"
+        app:layout_constraintStart_toStartOf="@+id/location_setup6"
+        app:layout_constraintTop_toBottomOf="@+id/textView71" />
+
+</android.support.constraint.ConstraintLayout>

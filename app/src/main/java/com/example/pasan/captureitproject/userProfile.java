@@ -1,23 +1,43 @@
 package com.example.pasan.captureitproject;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Pair;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -28,64 +48,87 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.StringJoiner;
 
-public class userProfile extends AppCompatActivity {
+import de.hdodenhof.circleimageview.CircleImageView;
+
+@RequiresApi(api = Build.VERSION_CODES.N)
+public class userProfile extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "userinfo";
     private ProgressDialog progressDialog;
 
-    private ArrayList<String> imageUrls = new ArrayList<>();
-    private ArrayList<String> userNames = new ArrayList<>();
-    private ArrayList<String> profileImageUrls = new ArrayList<>();
-    private ArrayList<String> proffesions = new ArrayList<>();
-    private ArrayList<String> userIds = new ArrayList<>();
-    private ArrayList<String> imageIds = new ArrayList<>();
-
+    // declaration of views
     private ImageView userImage, userImage2;
-    private TextView userName, user_name_top;
-    private TextView posts;
-    private TextView followings;
-    private TextView followers;
-    private Button back_button;
-
-    private DatabaseReference imagedata;
-
-    private String userId;
-    private String ImageUrl;
-    private String imageUrl;
-    private String message;
-    private String name;
-    private String proffession;
-    private String posts_string;
-    private String following_count_string;
-    private String followers_count_string;
-    private String current_user;
-    private RelativeLayout relativeLayout;
+    private TextView userName, user_name_top, description, language, mobile, occupations;
+    private ConstraintLayout linearLayout3;
     private RecyclerView recyclerView;
+    private CircleImageView settings_button;
+    private ConstraintLayout user_profile_layout;
+    private Button upload_button;
+    private Button editButton;
 
-    int post_count = 0;
-    int following_count = 0;
-    int Followers_count = 0;
+    // Firebase
+    private DatabaseReference imagedata;
+    private FirebaseAuth moAuth;
 
+    // user details
+    private String userId;
+    private String currentUId;
+    private String message;
+
+    public static String user_name = " ";
+    public static String user_language = " ";
+    public static String user_mobile = " ";
+    public static String user_description = " ";
+
+
+    String userType = "Photographers";
+    //
+    // private StringJoiner oc = new StringJoiner(" ");
+
+    // Animations
     Animation uptoDown;
     Animation downtoTop;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        recyclerView = findViewById(R.id.userImages_recyclerView);
-        relativeLayout = (RelativeLayout) findViewById(R.id.user_info);
-        back_button = findViewById(R.id.back_userProfile);
+        // definition of all views
+        recyclerView = findViewById(R.id.u_p_recycleView);
+        linearLayout3 = findViewById(R.id.linearLayout4);
+        settings_button = findViewById(R.id.settings_button);
+        user_profile_layout = findViewById(R.id.user_profile_layout);
+        upload_button = findViewById(R.id.upload_button);
+        description = findViewById(R.id.u_p_description);
+        language = findViewById(R.id.language);
+        mobile = findViewById(R.id.textView18);
+        occupations = findViewById(R.id.textView99);
+        userImage = findViewById(R.id.u_p_userImage);
+        userName = findViewById(R.id.u_p_user_name);
+        user_name_top = findViewById(R.id.user_name_top);
+        userImage2 = findViewById(R.id.profile_image3);
+        editButton = findViewById(R.id.u_p_edit);
+
+        // set the profile image
+        Glide.with(userProfile.this).load(Feeds.imageUrl).into(userImage);
+
+        // Firebase
+        moAuth = FirebaseAuth.getInstance();
+        currentUId = moAuth.getCurrentUser().getUid();
 
         message = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+        // Animations
         uptoDown = AnimationUtils.loadAnimation(this, R.anim.fade);
         downtoTop = AnimationUtils.loadAnimation(this, R.anim.anim3);
-
-        relativeLayout.setAnimation(uptoDown);
         recyclerView.setAnimation(downtoTop);
 
         // make progress dialog
@@ -93,89 +136,104 @@ public class userProfile extends AppCompatActivity {
         progressDialog.setMessage("Loading");
         progressDialog.show();
 
-        // define views
-        userName = findViewById(R.id.profile_name);
-        user_name_top = findViewById(R.id.user_name_top);
-        posts = findViewById(R.id.postCount);
-        userImage = findViewById(R.id.profile_image);
-        userImage2 = findViewById(R.id.profile_image3);
-        followers = findViewById(R.id.following_count);
-        followings = findViewById(R.id.followersCount);
+        checkUserType();
 
         // choose the firebase instances on selected user
-        imagedata = FirebaseDatabase.getInstance().getReference().child("Users").child(message);
+        imagedata = FirebaseDatabase.getInstance().getReference().child("Users").child(userType).child(message);
+        imagedata.keepSynced(true);
 
         // upload the photo to main image at the top of the intent
-        setUserImage();
-
-        // set all the images and data in recycerview
-        setImages();
-
-        posts_string = Integer.toString(post_count);
-        posts.setText(posts_string);
-
-        // get following count
-        getFollowings();
-
-        // get followers count
-        getFollowers();
-        if (Followers_count == 0 ){
-            followers_count_string = Integer.toString(Followers_count);
-            followers.setText(followers_count_string);
-        }
-        else {
-            Followers_count--;
-            followers_count_string = Integer.toString(Followers_count);
-            followers.setText(followers_count_string);
-        }
-        following_count_string = Integer.toString(following_count);
-        followings.setText(following_count_string);
-
+        setUserInfo();
 
         // close progressdialog
         progressDialog.dismiss();
 
-        back_button.setOnClickListener(new View.OnClickListener() {
+        // listeners
+        userImage.setOnClickListener(this);
+        editButton.setOnClickListener(this);
+        settings_button.setOnClickListener(this);
+        upload_button.setOnClickListener(this);
+
+        addOccupations();
+
+    }
+
+    private void checkUserType() {
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("User Type").child("Customers");
+        database.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), navigation_interface.class));
-                finish();
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                if ( dataSnapshot.exists() && Objects.equals(dataSnapshot.getKey(), message)){
+                    userType = "Customers";
+
+                    // choose the firebase instances on selected user
+                    imagedata = FirebaseDatabase.getInstance().getReference().child("Users").child(userType).child(message);
+
+                    // upload the photo to main image at the top of the intent
+                    setUserInfo();
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
 
-
     }
 
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(), navigation_interface.class));
-        finish();
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void addOccupations(){
+            //String k = oc.toString();
+            //occupations.setText(k);
     }
 
-    public void setUserImage(){
+
+    public void setUserInfo(){
         imagedata.addListenerForSingleValueEvent(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists() ) {
                     userId = dataSnapshot.getKey();
                     Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
-                    if (map.get("profileImageUrl") != null){
-                        imageUrl = map.get("profileImageUrl").toString();
-                        //names.setText(userMobile);
-                        Glide.with(getApplication()).load(imageUrl).into(userImage);
-                        //Glide.with(getApplication()).load(imageUrl).into(userImage2);
 
+                    assert map != null;
+                    if ( map.get("Description") != null){
+                        user_description = Objects.requireNonNull(map.get("Description")).toString();
+                        description.setText(user_description);
                     }
-                    if (map.get("Name") != null){
-                        name = map.get("Name").toString();
-                        userName.setText(name);
-                        //user_name_top.setText(name);
+                    if ( map.get("Mobile") != null){
+                        user_mobile = Objects.requireNonNull(map.get("Mobile")).toString();
+                        mobile.setText(user_mobile);
                     }
-                    if ( dataSnapshot.child("Profession").exists()) {
-                        if (map.get("Profession") != null) {
-                            proffession = map.get("Profession").toString();
+                    if (map.get("User Name") != null){
+                        user_name = Objects.requireNonNull(map.get("User Name")).toString();
+                        userName.setText(user_name);
+                    }
+                    if ( dataSnapshot.child("Language").exists()) {
+                        if (map.get("Language") != null) {
+                            user_language = Objects.requireNonNull(map.get("Language")).toString();
+                            language.setText(Objects.requireNonNull(map.get("Language")).toString());
                         }
                     }
+                    addOccupations();
                 }
             }
 
@@ -186,203 +244,53 @@ public class userProfile extends AppCompatActivity {
         });
     }
 
-    public void setImages ( ){
-        // set images on recycler view
-        getInfo();
-        // start recycler views/ feeds
-        startRecyclerView();
+
+    @Override
+    public void onClick(View v) {
+        if ( v == userImage ){
+            Intent intent = new Intent(getApplicationContext(), profilesetupAct.class );
+
+
+            Pair[] pairs = new Pair[2];
+            pairs[0] = new Pair< View, String > (userImage, "profile_photo");
+            pairs[1] = new Pair< View, String >(linearLayout3, "gradiant_layout");
+
+            try {
+                ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(userProfile.this , pairs);
+                startActivity(intent , activityOptions.toBundle());
+            }catch (Exception i ){
+                Toast.makeText(getApplicationContext(), "Not Worked" + i, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        }
+
+        if ( v == editButton ){
+            Intent intent = new Intent(userProfile.this, profilesetupAct.class );
+
+
+            Pair[] pairs = new Pair[2];
+            pairs[0] = new Pair< View, String > (userImage, "profile_photo");
+            pairs[1] = new Pair< View, String >(linearLayout3, "gradiant_layout");
+
+            try {
+                ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(userProfile.this , pairs);
+                startActivity(intent , activityOptions.toBundle());
+            }catch (Exception i ){
+                Toast.makeText(getApplicationContext(), "Not Worked" + i, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        }
+
+        if ( v == settings_button ){
+            Intent intent = new Intent(userProfile.this, settings.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        }
+
+        if ( v == upload_button ){
+            Intent intent = new Intent(getApplicationContext(), photoUpload.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        }
     }
-
-    // set images on recycler view
-    public void getInfo(){
-        final DatabaseReference picodatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(message).child("Uploads");
-
-        // add the captureit feed as the first component of recycler view
-        imageUrls.add("https://firebasestorage.googleapis.com/v0/b/captureit-b09bc.appspot.com/o/cAPTUREIT.jpg?alt=media&token=1ad1c727-439d-4ab9-bc9b-ea2751e7abfc");
-        userNames.add("CaptureIt");
-        profileImageUrls.add("https://firebasestorage.googleapis.com/v0/b/captureit-b09bc.appspot.com/o/cAPTUREIT.jpg?alt=media&token=1ad1c727-439d-4ab9-bc9b-ea2751e7abfc");
-        proffesions.add("None");
-        imageIds.add("2329023");
-        // get user uploads
-        picodatabase.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if ( dataSnapshot.exists() ){
-                    post_count++;
-                    ImageUrl = dataSnapshot.child("Upload").getValue().toString();
-                    imageUrls.add(ImageUrl);
-                    userNames.add(name);
-                    userIds.add(userId);
-                    imageIds.add(dataSnapshot.getKey());
-                    proffesions.add(proffession);
-                    uploadUserImage();
-                    profileImageUrls.add(imageUrl);
-                    posts_string = Integer.toString(post_count);
-                    posts.setText(posts_string);
-                }
-                else {
-
-                }
-            }
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-
-    }
-
-
-    // load profile image of every recycler view
-    private void uploadUserImage() {
-        imagedata.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists() ) {
-                    Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
-                    if (map.get("profileImageUrl") != null){
-                        imageUrl = map.get("profileImageUrl").toString();
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    public void startRecyclerView(){
-        Log.d(TAG, "startRecyclerView: hello");
-        RecyclerView rcView = findViewById(R.id.userImages_recyclerView);
-        usersRecycleView adapter = new usersRecycleView(this, userNames, imageUrls, profileImageUrls, proffesions, userIds, imageIds);
-        rcView.setAdapter(adapter);
-        rcView.setLayoutManager(new LinearLayoutManager(this));
-    }
-
-    public void getFollowings(){
-        final DatabaseReference yep_count = FirebaseDatabase.getInstance().getReference().child("Users").child(message).child("Connections").child("Yep");
-
-        yep_count.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                if (dataSnapshot.exists()){
-                    following_count++;
-                    following_count_string = Integer.toString(following_count);
-                    followings.setText(following_count_string);
-                }
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    public void getFollowers(){
-        final DatabaseReference yep_count = FirebaseDatabase.getInstance().getReference().child("Users");
-
-        yep_count.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                if (dataSnapshot.exists() ){
-                    current_user = dataSnapshot.getKey();
-                    checkforFollowers(current_user);
-                }
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-    }
-
-
-    // check in users for followers
-    public void checkforFollowers(String current_user){
-        final DatabaseReference check_followers= FirebaseDatabase.getInstance().getReference().child("Users").child(current_user).child("Connections").child("Yep");
-
-        check_followers.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                if (dataSnapshot.exists() && ( dataSnapshot.getKey().equals(message)) ){
-                    Followers_count++;
-                    followers_count_string = Integer.toString(Followers_count);
-                    followers.setText(followers_count_string);
-                }
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-
 }

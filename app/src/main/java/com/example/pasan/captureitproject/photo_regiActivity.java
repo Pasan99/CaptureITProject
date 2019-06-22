@@ -2,10 +2,13 @@ package com.example.pasan.captureitproject;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Vibrator;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -27,6 +30,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -35,8 +41,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class photo_regiActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class photo_regiActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "phot_regiActivity";
+    public static final String EXTRA_MESSAGE_2 ="regi" ;
     private ProgressDialog progressDialog;
 
     // firebase auth class
@@ -48,49 +55,44 @@ public class photo_regiActivity extends AppCompatActivity implements View.OnClic
     private EditText password;
     private EditText mobile;
     private Button register;
-    private String item33;
 
     private Animation left_to_right;
     private Animation right_to_left;
     private Animation bottomtoTop, toptoBottom;
 
     private TextView popupText;
-    private Dialog dialog;
-    private RelativeLayout relativeLayout;
-    private LinearLayout loading;
+    private Dialog dialog1;
+    private ConstraintLayout relativeLayout;
+    private ConstraintLayout loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_regi);
 
+
+
         left_to_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left_to_right);
         right_to_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_to_left);
         bottomtoTop = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.main_page_anim_bottom);
         toptoBottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim2);
 
-        dialog = new Dialog(this);
-        dialog.setContentView(R.layout.loading_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog1 = new Dialog(this);
+        dialog1.setContentView(R.layout.loading_dialog);
+        dialog1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        loading = dialog.findViewById(R.id.loading_linear_layout);
-        loading.getBackground().setAlpha(128);
+        loading = dialog1.findViewById(R.id.loading_linear_layout);
+        dialog1.setCancelable(false);
+        //loading.getBackground().setAlpha(128);
 
-        popupText = dialog.findViewById(R.id.loading_text);
+        popupText = dialog1.findViewById(R.id.loading_text);
         popupText.setText("Register User");
-        relativeLayout = dialog.findViewById(R.id.loading_layout);
+        relativeLayout = dialog1.findViewById(R.id.loading_layout);
         relativeLayout.setAnimation(bottomtoTop);
 
         //create firebase auth object
         mAuth = FirebaseAuth.getInstance();
 
-        Spinner dropdown = findViewById(R.id.spinner1);
-        String[] items = new String[]{"Select Professions", "Photographer", "CaptureIt Customer"};
-        //create an adapter to describe how the items are displayed, adapters are used in several places in android.
-        //There are multiple variations of this, but this is the basic variant.
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        //set the spinners adapter to the previously created one.
-        dropdown.setAdapter(adapter);
 
         username = (EditText) findViewById(R.id.username);
         email = (EditText) findViewById(R.id.email);
@@ -105,15 +107,24 @@ public class photo_regiActivity extends AppCompatActivity implements View.OnClic
         register.setAnimation(bottomtoTop);
 
 
-        dropdown.setOnItemSelectedListener(this);
         register.setOnClickListener(this);
 
+    }
+
+    private void doneProfileSetup() {
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        String userId = firebaseAuth.getCurrentUser().getUid();
+        DatabaseReference data = FirebaseDatabase.getInstance().getReference().child("Users").child("Photographers").child(userId);
+        HashMap setup = new HashMap();
+        setup.put("Setup", "Complete");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("User Type").child("Customers");
+        database.child(userId).setValue(true);
     }
 
     @Override
     public void onBackPressed() {
         //Execute your code here
-        startActivity(new Intent(getApplicationContext(), registrationActivity.class));
+        startActivity(new Intent(getApplicationContext(), selectProfession.class));
         finish();
 
     }
@@ -126,19 +137,12 @@ public class photo_regiActivity extends AppCompatActivity implements View.OnClic
     }
 
 
-    public void setup(View view2) {
-        // method that we defined bellow
-        registerUser();
-
-    }
-
 
     private void registerUser() {
         String emails = email.getText().toString().trim();
         final String usernames = username.getText().toString().trim();
         final String passwords = password.getText().toString().trim();
         final String mobiles = mobile.getText().toString().trim();
-        final String profession = item33;
 
         if (TextUtils.isEmpty(emails)) {
             Toast.makeText(this, "please enter a email", Toast.LENGTH_SHORT).show();
@@ -158,12 +162,9 @@ public class photo_regiActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(this, "please enter mobile number", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (item33 == null || item33 == "Select Professions") {
-            Toast.makeText(this, "please enter Profession", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
-        dialog.show();
+
+        dialog1.show();
 
         mAuth.createUserWithEmailAndPassword(emails, passwords)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -175,17 +176,108 @@ public class photo_regiActivity extends AppCompatActivity implements View.OnClic
                             //startActivity(new Intent(getApplicationContext(), profilesetupAct.class));
                             Toast.makeText(photo_regiActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                             String userId = mAuth.getCurrentUser().getUid();
-                            DatabaseReference firebaseDbUsers = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);
+                            DatabaseReference firebaseDbUsers = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(userId);
                             Map newPost = new HashMap();
-                            newPost.put("Name", usernames);
+                            newPost.put("User Name", usernames);
                             newPost.put("Mobile", mobiles);
-                            newPost.put("Profession", profession);
                             firebaseDbUsers.setValue(newPost);
-                            dialog.cancel();
+                            dialog1.cancel();
                             loginUser(emails, passwords);
 
                         }
+                        else if (task.getException() instanceof FirebaseAuthUserCollisionException)
+                        {
+                            //If email already registered.
+                            Vibrator vb = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                            vb.vibrate(8);
+                            Animation bounce = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+                            final Dialog dialog = new Dialog(getApplicationContext());
+                            dialog.setContentView(R.layout.popup_messege);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            Button okay = dialog.findViewById(R.id.button2);
+                            TextView messege = dialog.findViewById(R.id.popup_messege_text);
+                            messege.setText("If email already registered.");
+                            ConstraintLayout loading = dialog.findViewById(R.id.popup_biglayout);
+                            loading.setAnimation(bounce);
+                            dialog.show();
+
+                            okay.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                        }
+                        else if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                            //If email are in incorret  format
+                            Vibrator vb = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                            vb.vibrate(8);
+                            Animation bounce = AnimationUtils.loadAnimation(getApplicationContext() ,R.anim.bounce);
+                            final Dialog dialog = new Dialog(getApplicationContext());
+                            dialog.setContentView(R.layout.popup_messege);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            Button okay = dialog.findViewById(R.id.button2);
+                            TextView messege = dialog.findViewById(R.id.popup_messege_text);
+                            messege.setText("If email are in incorret  format ");
+                            ConstraintLayout loading = dialog.findViewById(R.id.popup_biglayout);
+                            loading.setAnimation(bounce);
+                            dialog.show();
+
+                            okay.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                        }
+                        else if (task.getException() instanceof FirebaseAuthWeakPasswordException) {
+                            //if password not 'stronger'
+                            Vibrator vb = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                            vb.vibrate(8);
+                            Animation bounce = AnimationUtils.loadAnimation(getApplicationContext() ,R.anim.bounce);
+                            final Dialog dialog = new Dialog(getApplicationContext());
+                            dialog.setContentView(R.layout.popup_messege);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            Button okay = dialog.findViewById(R.id.button2);
+                            TextView messege = dialog.findViewById(R.id.popup_messege_text);
+                            messege.setText("if password not 'stronger'");
+                            ConstraintLayout loading = dialog.findViewById(R.id.popup_biglayout);
+                            loading.setAnimation(bounce);
+                            dialog.show();
+
+                            okay.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialog.cancel();
+                                }
+                            });
+                        }else
+                        {
+                            //OTHER THING
+                            Vibrator vb = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                            vb.vibrate(8);
+                            Animation bounce = AnimationUtils.loadAnimation(getApplicationContext() ,R.anim.bounce);
+                            final Dialog dialog = new Dialog(getApplicationContext());
+                            dialog.setContentView(R.layout.popup_messege);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            Button okay = dialog.findViewById(R.id.button2);
+                            TextView messege = dialog.findViewById(R.id.popup_messege_text);
+                            messege.setText("if password not 'stronger'");
+                            ConstraintLayout loading = dialog.findViewById(R.id.popup_biglayout);
+                            loading.setAnimation(bounce);
+                            dialog.show();
+
+                            okay.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialog.cancel();
+                                }
+                            });
+                        }
                     }
+
                 });
 
 
@@ -196,25 +288,29 @@ public class photo_regiActivity extends AppCompatActivity implements View.OnClic
         //String email = emails.getText().toString().trim();
         //String password = passwords.getText().toString().trim();
         popupText.setText("Log In");
-        dialog.show();
+        dialog1.show();
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            dialog.cancel();
+                            dialog1.cancel();
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             while ( user == null );
                             if ( user != null ) {
-                                startActivity(new Intent(getApplicationContext(), BottomNavigation.class));
+                                doneProfileSetup();
+                                Intent intent = new Intent(getApplicationContext(), profilesetupAct.class);
+                                intent.putExtra(EXTRA_MESSAGE_2, "Hello");
+                                startActivity(new Intent(getApplicationContext(), profilesetupAct.class));
                                 finish();
+
                             }
                             //updateUI(user);
                         } else {
-                            dialog.cancel();
+                            dialog1.cancel();
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(photo_regiActivity.this, "Authentication failed.",
@@ -228,14 +324,6 @@ public class photo_regiActivity extends AppCompatActivity implements View.OnClic
                 });
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        item33 = (String) parent.getItemAtPosition(position);
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        Toast.makeText(photo_regiActivity.this, "Authentication failed.",
-                Toast.LENGTH_SHORT).show();
-    }
+
 }

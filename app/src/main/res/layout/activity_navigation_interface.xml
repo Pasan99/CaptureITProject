@@ -1,152 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/navigation_interface_layout"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_interface_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".navigation_interface"
-    android:background="#232323"
 
     >
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:id="@+id/frame1"
-        android:layout_alignParentTop="true"
-        >
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="0dp"
-            app:srcCompat="@drawable/addimage"
-            android:scaleType="centerCrop"
-            />
-
-
-    </FrameLayout>
-
-    <LinearLayout
-        android:id="@+id/lenear1"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="vertical"
-        android:layout_below="@+id/frame1"
-        >
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="559dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/setting_layout_elements"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
+            android:id="@+id/sp_textView54"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="50dp"
+            android:text="Standard Package"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="Photo Count"
+            app:layout_constraintStart_toStartOf="@+id/sp_textView54"
+            app:layout_constraintTop_toBottomOf="@+id/sp_textView54" />
+
+        <EditText
+            android:id="@+id/sp_photo_count"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/e_p_user_name"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/textView55"
+            app:layout_constraintStart_toEndOf="@+id/textView55"
+            app:layout_constraintTop_toTopOf="@+id/textView55" />
+
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Time Period"
+            app:layout_constraintStart_toStartOf="@+id/textView55"
+            app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="to"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/bp_time_period_start"
+            app:layout_constraintEnd_toEndOf="@+id/sp_photo_count"
+            app:layout_constraintStart_toStartOf="@+id/sp_photo_count"
+            app:layout_constraintTop_toTopOf="@+id/bp_time_period_start" />
+
+        <EditText
+            android:id="@+id/bp_time_period_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/e_p_user_name"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/textView56"
+            app:layout_constraintEnd_toStartOf="@+id/textView57"
+            app:layout_constraintStart_toStartOf="@+id/sp_photo_count"
+            app:layout_constraintTop_toTopOf="@+id/textView56" />
+
+        <EditText
+            android:id="@+id/time_period_end"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/e_p_user_name"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/textView56"
+            app:layout_constraintEnd_toEndOf="@+id/sp_photo_count"
+            app:layout_constraintStart_toEndOf="@+id/textView57"
+            app:layout_constraintTop_toTopOf="@+id/textView56" />
+
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Diliver Time"
+            app:layout_constraintStart_toStartOf="@+id/textView56"
+            app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+        <EditText
+            android:id="@+id/bp_diliver_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/e_p_user_name"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/textView58"
+            app:layout_constraintEnd_toEndOf="@+id/sp_photo_count"
+            app:layout_constraintStart_toStartOf="@+id/sp_photo_count"
+            app:layout_constraintTop_toTopOf="@+id/textView58" />
+
+        <TextView
+            android:id="@+id/textView59"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Action Plan"
+            app:layout_constraintStart_toStartOf="@+id/textView58"
+            app:layout_constraintTop_toBottomOf="@+id/textView58" />
+
+        <Switch
+            android:id="@+id/bp_action_plan_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/textView59"
+            app:layout_constraintEnd_toEndOf="@+id/bp_diliver_time"
+            app:layout_constraintStart_toStartOf="@+id/bp_diliver_time"
+            app:layout_constraintTop_toTopOf="@+id/textView59" />
+
+        <TextView
+            android:id="@+id/textView60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Shedule Posts"
+            app:layout_constraintStart_toStartOf="@+id/textView59"
+            app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+        <Switch
+            android:id="@+id/shedule_post_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/textView60"
+            app:layout_constraintEnd_toEndOf="@+id/bp_action_plan_switch"
+            app:layout_constraintStart_toStartOf="@+id/bp_action_plan_switch"
+            app:layout_constraintTop_toTopOf="@+id/textView60" />
+
+        <TextView
+            android:id="@+id/textView61"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Social Media Management"
+            app:layout_constraintStart_toStartOf="@+id/textView60"
+            app:layout_constraintTop_toBottomOf="@+id/textView60" />
+
+        <Switch
+            android:id="@+id/social_media_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView61"
+            app:layout_constraintEnd_toEndOf="@+id/bp_diliver_time"
+            app:layout_constraintStart_toEndOf="@+id/textView61"
+            app:layout_constraintTop_toTopOf="@+id/textView61" />
+
+        <TextView
+            android:id="@+id/textView62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Description"
+            app:layout_constraintStart_toStartOf="@+id/textView61"
+            app:layout_constraintTop_toBottomOf="@+id/textView61" />
+
+        <EditText
+            android:id="@+id/package_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/e_p_user_name"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/textView62"
+            app:layout_constraintEnd_toEndOf="@+id/bp_diliver_time"
+            app:layout_constraintStart_toStartOf="@+id/bp_diliver_time"
+            app:layout_constraintTop_toTopOf="@+id/textView62" />
+
+        <EditText
+            android:id="@+id/package_price"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:gravity="center_horizontal"
-            android:textAllCaps="true"
-            android:text="Pasan Manohar"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/profile_setup_button"
+            android:ems="10"
+            android:hint="Price"
+            android:inputType="textPersonName"
             android:textAlignment="center"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView62" />
 
-        <TextView
-            android:id="@+id/password"
-            android:text="Hello world"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:gravity="center_horizontal"
-            android:textStyle="italic"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lenear1"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        >
-
-        <Button
-            android:id="@+id/swipe"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/round2"
-            android:text="My Uploads"
-            />
-
-        <Button
-            android:id="@+id/check"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/round3"
-            android:text="Upload Photos"
-
-            />
-
-        <Button
-            android:id="@+id/remove"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/red_button"
-            android:text="remove account"
-            android:textSize="12dp"
-
-            />
-
-        <Button
-            android:id="@+id/logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="LOG OUT"
-
-            />
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/linear2"
-        android:gravity="center"
-
-        >
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_marginTop="18dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CAPTURE IT Crew"
-            android:textColor="#ffff"
-            android:textStyle="bold"
-            />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:textSize="10dp"
-            android:text="Powered by "
-            android:textColor="#ffff"
-            />
-
-
-    </LinearLayout>
-
-
-</RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

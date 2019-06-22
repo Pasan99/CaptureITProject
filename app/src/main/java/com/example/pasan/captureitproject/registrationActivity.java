@@ -42,7 +42,7 @@ public class registrationActivity extends AppCompatActivity implements View.OnCl
     private EditText emails;
     private EditText passwords;
     private Button login;
-    private TextView registration;
+    private Button registration;
     private Animation left_to_right;
     private Animation right_to_left;
     private Animation bottomtoTop, toptoBottom, fade_off, fade;
@@ -51,7 +51,7 @@ public class registrationActivity extends AppCompatActivity implements View.OnCl
     private Dialog dialog;
     private TextView popupText;
     private RelativeLayout relativeLayout;
-    private LinearLayout loading;
+    private ConstraintLayout loading;
     //String imageUrl = "https://firebasestorage.googleapis.com/v0/b/captureit-b09bc.appspot.com/o/startPage.png?alt=media&token=11908d2a-56b2-4a64-a7f8-1ca632230f29";
 
     @Override
@@ -72,27 +72,26 @@ public class registrationActivity extends AppCompatActivity implements View.OnCl
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         loading = dialog.findViewById(R.id.loading_linear_layout);
-        loading.getBackground().setAlpha(128);
+        dialog.setCancelable(false);
+        //loading.getBackground().setAlpha(128);
 
         popupText = dialog.findViewById(R.id.loading_text);
         popupText.setText("Log In");
-        relativeLayout = dialog.findViewById(R.id.loading_layout);
-        relativeLayout.setAnimation(bottomtoTop);
 
         constraintLayout = findViewById(R.id.registration_layout);
         emails = (EditText) findViewById(R.id.logEmail);
         passwords = (EditText) findViewById(R.id.logPassword);
         progressDialog = new ProgressDialog(this);
         login = (Button) findViewById(R.id.Loginbutton);
-        registration = (TextView) findViewById(R.id.textView3);
-        image = (ImageView) findViewById(R.id.imageView3);
+        registration = findViewById(R.id.textView3);
+        //image = (ImageView) findViewById(R.id.imageView3);
 
         constraintLayout.setAnimation(fade);
         emails.setAnimation(left_to_right);
         passwords.setAnimation(right_to_left);
         login.setAnimation(bottomtoTop);
         registration.setAnimation(bottomtoTop);
-        image.setAnimation(toptoBottom);
+        //image.setAnimation(toptoBottom);
 
 
 
@@ -185,9 +184,7 @@ public class registrationActivity extends AppCompatActivity implements View.OnCl
             loginUser();
         }
         if ( v == registration ){
-            Intent intent = new Intent(getApplicationContext(), photo_regiActivity.class);
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(registrationActivity.this, Pair.<View, String>create(image, "captureit"));
-            constraintLayout.setAnimation(fade_off);
+            Intent intent = new Intent(getApplicationContext(), selectProfession.class);
             startActivity(intent);
             finish();
         }

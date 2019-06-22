@@ -78,49 +78,13 @@ public class navigation_interface extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_navigation_interface);
         //showToast();
 
-        relativeLayout = findViewById(R.id.navigation_interface_layout);
-        relativeLayout.getBackground().setAlpha(250);
 
-        left_to_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left_to_right);
-        right_to_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_to_left);
-        bottomtoTop = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim3);
-        toptoBottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim2);
-        fade_off = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_off);
-        fade = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade);
-
-        dialog = new Dialog(this);
-        dialog.setContentView(R.layout.pop_message);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        popup_message = dialog.findViewById(R.id.popup_message);
-        popup_no = dialog.findViewById(R.id.popup_no_button);
-        popup_yes = dialog.findViewById(R.id.popup_yes_button);
-        linearLayout = dialog.findViewById(R.id.popup_layout);
-
-        moAuth = FirebaseAuth.getInstance();
-        progressDialog = new ProgressDialog(this);
         currentUId = moAuth.getCurrentUser().getUid();
         mAuth = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUId);
 
-        remove = findViewById(R.id.remove);
-        logout = (Button) findViewById(R.id.logout);
-        swipe = (Button) findViewById(R.id.swipe);
-        check = (Button) findViewById(R.id.check);
-        profileImg = (ImageView) findViewById(R.id.imageView4);
-        names = (TextView) findViewById(R.id.name);
-        passwords = findViewById(R.id.password);
 
-        remove.getBackground().setAlpha(250);
-        swipe.getBackground().setAlpha(250);
-        check.getBackground().setAlpha(250);
-        names.setTextColor(Color.WHITE);
-        passwords.setTextColor(Color.WHITE);
 
-        check.setAnimation(left_to_right);
-        swipe.setAnimation(right_to_left);
-        remove.setAnimation(left_to_right);
-        logout.setAnimation(bottomtoTop);
-        profileImg.setAnimation(toptoBottom);
+
 
         user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -132,12 +96,9 @@ public class navigation_interface extends AppCompatActivity implements View.OnCl
         // when user signed in
         if (user != null) {
             //ckeckUser();
-            getInfo();
 
             // Name, email address, and profile photo Url
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-            Uri photoUrl = user.getPhotoUrl();
+
 
             // Check if user's email is verified
             boolean emailVerified = user.isEmailVerified();
@@ -153,13 +114,6 @@ public class navigation_interface extends AppCompatActivity implements View.OnCl
 
         }
 
-        profileImg.setOnClickListener(this);
-        logout.setOnClickListener(this);
-        swipe.setOnClickListener(this);
-        check.setOnClickListener(this);
-        names.setOnClickListener(this);
-        passwords.setOnClickListener(this);
-        remove.setOnClickListener(this);
 
     }
 

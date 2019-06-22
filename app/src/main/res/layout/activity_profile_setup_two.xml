@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profileSetupTwo">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="233dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/setup_top_bar_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="1 . Basic Information"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/setup_top_bar_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="|  2  |  3  |  4  |  5  "
+            android:textColor="#fff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userImage_profileSetup2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:elevation="10dp"
+        android:src="@drawable/profile_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Add Suitable Profile photo for better communication"
+        app:layout_constraintEnd_toEndOf="@+id/userImage_profileSetup2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userImage_profileSetup2"
+        app:layout_constraintTop_toBottomOf="@+id/userImage_profileSetup2" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:text="User Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+    <EditText
+        android:id="@+id/userName_setup2"
+        android:layout_width="224dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/setup_top_bar_grey"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:elevation="10dp"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/textView36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView36"
+        app:layout_constraintTop_toTopOf="@+id/textView36" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Description"
+        app:layout_constraintEnd_toEndOf="@+id/textView36"
+        app:layout_constraintStart_toStartOf="@+id/textView36"
+        app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+    <EditText
+        android:id="@+id/description_profileSetup2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/setup_top_bar_grey"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#fff"
+        android:elevation="10dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/textView37"
+        app:layout_constraintEnd_toEndOf="@+id/userName_setup2"
+        app:layout_constraintStart_toStartOf="@+id/userName_setup2"
+        app:layout_constraintTop_toTopOf="@+id/textView37" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Language"
+        app:layout_constraintEnd_toEndOf="@+id/textView37"
+        app:layout_constraintStart_toStartOf="@+id/textView37"
+        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+    <AutoCompleteTextView
+        android:id="@+id/language_profileSetup2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/setup_top_bar_grey"
+        android:ems="10"
+        android:elevation="10dp"
+        android:inputType="textPersonName"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/textView38"
+        app:layout_constraintEnd_toEndOf="@+id/description_profileSetup2"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/description_profileSetup2"
+        app:layout_constraintTop_toTopOf="@+id/textView38" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Mobile no."
+        app:layout_constraintEnd_toEndOf="@+id/textView38"
+        app:layout_constraintStart_toStartOf="@+id/textView38"
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+    <EditText
+        android:id="@+id/mobileNo_profileSetup2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/setup_top_bar_grey"
+        android:ems="10"
+        android:elevation="10dp"
+        android:inputType="textPersonName"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/textView39"
+        app:layout_constraintEnd_toEndOf="@+id/language_profileSetup2"
+        app:layout_constraintStart_toStartOf="@+id/language_profileSetup2"
+        app:layout_constraintTop_toTopOf="@+id/textView39" />
+
+    <Button
+        android:id="@+id/continueButton_profileSetup2"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="10dp"
+        android:background="@drawable/profile_setup_button"
+        android:text="Continue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mobileNo_profileSetup2" />
+
+    <TextView
+        android:id="@+id/user_name_log_setup2"
+        android:layout_width="0dp"
+        android:textColor="#ff1944"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/userName_setup2"
+        app:layout_constraintStart_toStartOf="@+id/userName_setup2"
+        app:layout_constraintTop_toBottomOf="@+id/userName_setup2" />
+
+    <TextView
+        android:id="@+id/description_log_setup2"
+        android:layout_width="0dp"
+        android:textColor="#ff1944"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/description_profileSetup2"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/description_profileSetup2"
+        app:layout_constraintTop_toBottomOf="@+id/description_profileSetup2" />
+
+    <TextView
+        android:id="@+id/language_log_setup2"
+        android:layout_width="0dp"
+        android:textColor="#ff1944"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/language_profileSetup2"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="@+id/language_profileSetup2"
+        app:layout_constraintTop_toBottomOf="@+id/language_profileSetup2" />
+
+    <TextView
+        android:id="@+id/mobileno_log_setup2"
+        android:layout_width="0dp"
+        android:textColor="#ff1944"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/mobileNo_profileSetup2"
+        app:layout_constraintStart_toStartOf="@+id/mobileNo_profileSetup2"
+        app:layout_constraintTop_toBottomOf="@+id/mobileNo_profileSetup2" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Continue button will appear after successfull fill the form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continueButton_profileSetup2" />
+
+    <EditText
+        android:id="@+id/email_profileSetup2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/setup_top_bar_grey"
+        android:ems="10"
+        android:elevation="10dp"
+        android:hint="Email"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout5"
+        app:layout_constraintStart_toEndOf="@+id/userImage_profileSetup2"
+        app:layout_constraintTop_toTopOf="@+id/userImage_profileSetup2" />
+
+    <TextView
+        android:id="@+id/email_log_profileSetup2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/email_profileSetup2"
+        app:layout_constraintStart_toStartOf="@+id/email_profileSetup2"
+        app:layout_constraintTop_toBottomOf="@+id/email_profileSetup2" />
+
+    <EditText
+        android:id="@+id/password_profileSetup2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/setup_top_bar_grey"
+        android:ems="10"
+        android:hint="Password"
+        android:elevation="10dp"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="@+id/email_profileSetup2"
+        app:layout_constraintStart_toStartOf="@+id/email_profileSetup2"
+        app:layout_constraintTop_toTopOf="@+id/email_log_profileSetup2" />
+
+    <TextView
+        android:id="@+id/password_log_profileSetup2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/password_profileSetup2"
+        app:layout_constraintStart_toStartOf="@+id/password_profileSetup2"
+        app:layout_constraintTop_toBottomOf="@+id/password_profileSetup2" />
+</android.support.constraint.ConstraintLayout>

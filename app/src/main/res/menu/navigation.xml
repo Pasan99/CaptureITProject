@@ -11,8 +11,8 @@
 
      <item
          android:id="@+id/navigation_followers"
-         android:icon="@drawable/follow"
-         android:title="Followers"
+         android:icon="@drawable/ic_payment_black_24dp"
+         android:title="Bookings"
          />
 
 

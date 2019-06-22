@@ -1,210 +1,430 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:background="#ffff"
+    android:transitionName="whitePage"
+    android:id="@+id/user_profile_layou"
+    >
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="#232323"
-        android:layout_alignParentTop="true"
-        >
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/back_userProfile"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/back_white"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/user_info"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="45dp"
-        android:background="#ffff"
-        android:gravity="center_horizontal">
-
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/profile_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="16dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"
-            app:civ_border_color="#ff000000"
-            app:civ_border_width="0dp"
-            android:transitionName="userImageT"
-            />
-
-        <TextView
-            android:id="@+id/profile_name"
-            android:layout_width="181dp"
-            android:layout_height="34dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/profile_image"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="102dp"
-            android:layout_marginRight="102dp"
-            android:layout_marginBottom="18dp"
-            android:text="Pasan Manohara"
-
-            android:textColor="#000"
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="260dp"
-            android:layout_height="44dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="68dp"
-            android:layout_toEndOf="@+id/profile_image"
-            android:layout_toRightOf="@+id/profile_image"
-            android:text="Follow"
-            android:background="@drawable/round2"
-            />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="45dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="41dp"
-            android:layout_toEndOf="@+id/profile_image"
-            android:layout_toRightOf="@+id/profile_image"
-            android:text="Posts"
-            android:textAlignment="center" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="42dp"
-            android:layout_toEndOf="@+id/textView8"
-            android:layout_toRightOf="@+id/textView8"
-            android:text="Followers"
-            android:textAlignment="center" />
-
-        <TextView
-            android:id="@+id/postCount"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/textView8"
-            android:layout_alignRight="@+id/textView8"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="45dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_toEndOf="@+id/profile_image"
-            android:layout_toRightOf="@+id/profile_image"
-            android:text="32"
-            android:textAlignment="center"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/followersCount"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="21dp"
-            android:layout_toEndOf="@+id/postCount"
-            android:layout_toRightOf="@+id/postCount"
-            android:text="23"
-            android:textAlignment="center"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="14dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="42dp"
-            android:layout_toEndOf="@+id/textView9"
-            android:layout_toRightOf="@+id/textView9"
-            android:text="Following" />
-
-        <TextView
-            android:id="@+id/following_count"
-            android:layout_width="60dp"
-            android:textAlignment="center"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView9"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="14dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginBottom="-42dp"
-            android:layout_toEndOf="@+id/followersCount"
-            android:layout_toRightOf="@+id/followersCount"
-            android:text="4" />
-
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/seperator"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_alignTop="@+id/recylerView_layout"
-        android:layout_marginTop="3dp"
-        android:background="#00000000"
-        android:orientation="vertical"
-        ></LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/recylerView_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/user_info"
-        android:layout_marginTop="4dp"
-        >
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/userImages_recyclerView"
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            xmlns:fab="http://schemas.android.com/apk/res-auto"
+            android:background="#fff"
+            android:transitionName="whitePage"
+            android:id="@+id/user_profile_layout"
             >
 
 
-        </android.support.v7.widget.RecyclerView>
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:background="@drawable/searchbar_gradiant"
+                android:elevation="8dp"
+                android:orientation="vertical"
+                android:transitionName="gradiant_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
 
-    </LinearLayout>
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/settings_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="20dp"
+
+                    android:src="@drawable/settings_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/u_p_userImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/profile_image"
+                android:transitionName="profile_photo"
+                app:civ_border_color="#fff"
+                app:civ_border_width="7dp"
+                android:elevation="8dp"
+                android:padding="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+                app:layout_constraintVertical_bias="0.474" />
+
+            <TextView
+                android:id="@+id/u_p_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Pasan Manohara"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:transitionName="settings"
+                app:layout_constraintEnd_toEndOf="@+id/u_p_userImage"
+                app:layout_constraintStart_toStartOf="@+id/u_p_userImage"
+                app:layout_constraintTop_toBottomOf="@+id/u_p_userImage" />
+
+            <TextView
+                android:id="@+id/u_p_description"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="Description"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/u_p_user_name"
+                app:layout_constraintStart_toStartOf="@+id/u_p_user_name"
+                app:layout_constraintTop_toBottomOf="@+id/u_p_user_name" />
+
+            <Button
+                android:id="@+id/u_p_edit"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:background="#232323"
+                android:fontFamily="sans-serif-black"
+                android:text="Edit"
+                android:textColor="#ffff"
+                android:textSize="12sp"
+                android:transitionName="editButton"
+                app:layout_constraintEnd_toEndOf="@+id/u_p_description"
+                app:layout_constraintStart_toStartOf="@+id/u_p_description"
+                app:layout_constraintTop_toBottomOf="@+id/u_p_description" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/user_detail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                tools:layout_editor_absoluteY="250dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:paddingBottom="40dp"
+                android:elevation="20dp"
+                android:background="@drawable/user_profile_status_bar"
+                app:layout_constraintTop_toBottomOf="@+id/u_p_edit"
+                >
+
+                <TextView
+                    android:id="@+id/language_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Language"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="English"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/language_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/language_text"
+                    app:layout_constraintTop_toTopOf="@+id/language_text" />
+
+                <TextView
+                    android:id="@+id/contactNo_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Contact No"
+                    app:layout_constraintStart_toStartOf="@+id/language_text"
+                    app:layout_constraintTop_toBottomOf="@+id/language_text" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="+94 77 369 7702"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/contactNo_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/contactNo_text"
+                    app:layout_constraintTop_toTopOf="@+id/contactNo_text" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="Occupations"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/contactNo_text" />
+
+                <Button
+                    android:id="@+id/my_packages_button"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:background="#232323"
+                    android:fontFamily="sans-serif-black"
+                    android:text="My Packages"
+                    android:textColor="#fff"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView99" />
+
+                <TextView
+                    android:id="@+id/textView99"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Wedding Photographer"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/textView19"
+                    app:layout_constraintStart_toStartOf="@+id/textView19"
+
+                    app:layout_constraintTop_toBottomOf="@+id/textView19" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/status_bar_u_p"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
+                tools:layout_editor_absoluteY="250dp"
+                android:background="#232323"
+                android:elevation="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/user_detail_layout"
+                >
+
+                <TextView
+                    android:id="@+id/u_p_followers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="4321"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/u_p_shares"
+                    app:layout_constraintStart_toEndOf="@+id/u_p_following"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/u_p_followers_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Followers"
+                    android:textColor="#fff"
+                    app:layout_constraintEnd_toEndOf="@+id/u_p_followers"
+                    app:layout_constraintStart_toStartOf="@+id/u_p_followers"
+                    app:layout_constraintTop_toBottomOf="@+id/u_p_followers" />
+
+                <TextView
+                    android:id="@+id/u_p_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:text="5390"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/u_p_followers" />
+
+                <TextView
+                    android:id="@+id/u_p_following_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Following"
+                    android:textColor="#fff"
+                    app:layout_constraintEnd_toEndOf="@+id/u_p_following"
+                    app:layout_constraintStart_toStartOf="@+id/u_p_following"
+                    app:layout_constraintTop_toBottomOf="@+id/u_p_following" />
+
+                <TextView
+                    android:id="@+id/u_p_shares"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="70dp"
+                    android:text="398"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/u_p_followers" />
+
+                <TextView
+                    android:id="@+id/u_p_shares_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posts"
+                    android:textColor="#fff"
+                    app:layout_constraintEnd_toEndOf="@+id/u_p_shares"
+                    app:layout_constraintStart_toStartOf="@+id/u_p_shares"
+                    app:layout_constraintTop_toBottomOf="@+id/u_p_shares" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout11"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="vertical"
+                android:background="#fff"
+                app:layout_constraintTop_toBottomOf="@+id/status_bar_u_p"
+                ></LinearLayout>
 
 
-</RelativeLayout>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/user_profile_status_bar"
+                android:elevation="20dp"
+                android:paddingBottom="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/u_p_recycleView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="#fff"
+                    android:elevation="20dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/u_p_seeall" />
+
+                <TextView
+                    android:id="@+id/u_p_seeall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:text="See All"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/u_p_recycleView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="32dp"
+                    android:text="My Uploads"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="32dp"
+                    android:text="You can upload new photos"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/u_p_recycleView" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="They will be shown in your timeline. others can see them."
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView6"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <Button
+                    android:id="@+id/upload_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="#232323"
+                    android:text="Upload Photos"
+                    android:textColor="#fff"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

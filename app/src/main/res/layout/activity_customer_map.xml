@@ -1,109 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@+id/map_layout"
+<android.support.constraint.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:background="#000"
-        android:id="@+id/toolbar"
 
-        ></android.support.v7.widget.Toolbar>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:gravity="center"
-        >
-
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/home_button"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/home"
-            />
-
-        <ImageView
-            android:layout_height="match_parent"
-            android:layout_width="90dp"
-            android:src="@drawable/l"
-            android:layout_gravity="center"
-            android:gravity="center"
-
-            />
-
-        <Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/notification_icon_white"
-            />
-    </LinearLayout>
-
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="56dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:id="@+id/map_animation"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:map="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_marginTop="0dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintHorizontal_bias="0.0"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent"
+            map:layout_constraintVertical_bias="0.0"
             tools:context=".CustomerMap" />
 
 
-    </LinearLayout>
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/captureMe_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="90dp"
+            app:floating_background_color="#1AC9FE"
+            app:floating_title="Capture Me"
+            android:elevation="15dp"
+            app:floating_title_color="#fff"
+            app:layout_behavior="ru.dimorinny.floatingtextbutton.behavior.SnackbarBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </ru.dimorinny.floatingtextbutton.FloatingTextButton>
+
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="32dp"
+            app:floating_background_color="@color/redButton"
+            app:floating_title="Cancel"
+            app:floating_title_color="#fff"
+            android:elevation="15dp"
+            app:layout_behavior="ru.dimorinny.floatingtextbutton.behavior.SnackbarBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </ru.dimorinny.floatingtextbutton.FloatingTextButton>
+
+        <EditText
+            android:id="@+id/map_search"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/search_bar"
+            android:elevation="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="40dp"
+            android:text="Search here...."
+            android:textColor="#6b6b6b"
+            android:textColorHint="#6b6b6b"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Search here....." />
 
 
-    <ru.dimorinny.floatingtextbutton.FloatingTextButton
-        android:id="@+id/captureMe_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="80dp"
-        app:layout_behavior="ru.dimorinny.floatingtextbutton.behavior.SnackbarBehavior"
-        app:floating_background_color="@color/regbtn"
-        app:floating_title="Capture Me"
-        app:floating_title_color="#fff"
-
-        >
-
-    </ru.dimorinny.floatingtextbutton.FloatingTextButton>
-
-    <ru.dimorinny.floatingtextbutton.FloatingTextButton
-        android:id="@+id/cancel_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        app:layout_behavior="ru.dimorinny.floatingtextbutton.behavior.SnackbarBehavior"
-        app:floating_background_color="@color/redButton"
-        app:floating_title="Cancel"
-        app:floating_title_color="#fff"
-
-        >
-
-    </ru.dimorinny.floatingtextbutton.FloatingTextButton>
+    </android.support.constraint.ConstraintLayout>
 
 
 
-</RelativeLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
