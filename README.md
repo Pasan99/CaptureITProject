@@ -33,8 +33,8 @@ Google Design - https://www.youtube.com/channel/UClKO7be7O9cUGL94PHnAeOA<br>
 Google Developer - https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw<br>
 
 # Knowledge Areas Covered
-<h1>Android Development</h1>
-<h2>Views (Works with functions related to these views)</h2>
+<h2>Android Development</h2>
+<h3>Views (Works with functions related to these views)</h3>
 <ul>
   <li>Buttons</li>
   <li>RecycleView</li>
@@ -51,7 +51,7 @@ Google Developer - https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw<br>
   <li>Navigation View</li>
   <li>GoogleMaps</li>
 </ul>
-<h2>ViewGroups/layout (Works with functions related to these layouts)</h2>
+<h3>ViewGroups/layout (Works with functions related to these layouts)</h3>
 <ul>
   <li>Constraint layout</li>
   <li>Nested Scroll view</li>
@@ -59,15 +59,16 @@ Google Developer - https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw<br>
   <li>Scroll View</li>
 </ul>
 
-<h2>Services</h2>
+<h3>Services</h3>
 <ul>
   <li>Google Maps API</li>
   <li>Firebase Real time database</li>
   <li>Android Services (Vibrator/ Read and Write storage/ Internet Access/ Phone/ Location/ GPS)</li>
 </ul>
 
-<h2>Android Animations</h2>
-<h2>JAVA PROGRAMMING</h2>
+<h3>Android Animations</h3>
+<h3>Android Gestures</h3>
+<h3>JAVA PROGRAMMING</h3>
 <p>See All java classes that I have created in this project. It will give you rough idea about my programming knowledge and Java language knowlwdge.</p>
 <a href="https://github.com/Pasan99/CaptureITProject/tree/master/app/src/main/java/com/example/pasan/captureitproject">See All</a>
 
