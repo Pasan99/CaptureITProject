@@ -13,11 +13,14 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/setup_top_bar_green"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView45"
@@ -40,24 +43,28 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="You Have successfully created the  Package."
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout11"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout11"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout11" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout11"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView67"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="sans-serif-light"
         android:text="Set your visibilty on to start your  work."
-        android:textSize="19sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textView66"
         app:layout_constraintStart_toStartOf="@+id/textView66"
         app:layout_constraintTop_toBottomOf="@+id/textView66" />
@@ -67,8 +74,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="19sp"
+        android:fontFamily="sans-serif-light"
         android:text="After you set your availibility on  customers can see your shared location. "
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textView67"
         app:layout_constraintStart_toStartOf="@+id/textView67"
         app:layout_constraintTop_toBottomOf="@+id/textView67" />
@@ -78,8 +86,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="19sp"
+        android:fontFamily="sans-serif-light"
         android:text="Also they can book you."
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textView69"
         app:layout_constraintStart_toStartOf="@+id/textView69"
         app:layout_constraintTop_toBottomOf="@+id/textView69" />
