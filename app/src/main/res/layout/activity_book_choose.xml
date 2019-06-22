@@ -1,105 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Book_choose">
 
-    <CalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/calendar_book"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView87"
-        app:mcv_selectionColor="#00F"
-        app:mcv_showOtherDates="all" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView81"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="32dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="Select Date, Time and Location"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/time_book"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="55dp"
-        android:background="@drawable/setting_layout_elements"
-        android:ems="10"
-        android:inputType="time"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/textView82"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView82"
-        app:layout_constraintTop_toTopOf="@+id/textView82" />
+        <CalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/calendar_book"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView87"
+            app:layout_constraintVertical_bias="0.0"
+            app:mcv_selectionColor="#00F"
+            app:mcv_showOtherDates="all" />
 
-    <TextView
-        android:id="@+id/textView82"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="400dp"
-        android:text="Time ( 24 hours )"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView87" />
+        <TextView
+            android:id="@+id/textView81"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="32dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Select Date, Time and Location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView87"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:text="Date"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView81" />
+        <Button
+            android:id="@+id/time_book"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/setting_layout_elements"
+            android:ems="10"
+            android:inputType="time"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/textView82"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView82"
+            app:layout_constraintTop_toTopOf="@+id/textView82" />
 
-    <TextView
-        android:id="@+id/textView88"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Location"
-        app:layout_constraintStart_toStartOf="@+id/textView82"
-        app:layout_constraintTop_toBottomOf="@+id/textView82" />
+        <TextView
+            android:id="@+id/textView82"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Time ( 24 hours )"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendar_book"
+            app:layout_constraintVertical_bias="0.23000002" />
 
-    <Button
-        android:id="@+id/location_book"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@drawable/setting_layout_elements"
-        android:ems="10"
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/textView88"
-        app:layout_constraintEnd_toEndOf="@+id/time_book"
-        app:layout_constraintStart_toStartOf="@+id/time_book"
-        app:layout_constraintTop_toTopOf="@+id/textView88" />
+        <TextView
+            android:id="@+id/textView87"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Date"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView81"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/book_button_bc"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/rectangle_button"
-        android:text="Book"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location_book" />
+        <TextView
+            android:id="@+id/textView88"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Location"
+            app:layout_constraintStart_toStartOf="@+id/textView82"
+            app:layout_constraintTop_toBottomOf="@+id/textView82" />
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/location_book"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/setting_layout_elements"
+            android:ems="10"
+            android:textAlignment="center"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/textView88"
+            app:layout_constraintEnd_toEndOf="@+id/time_book"
+            app:layout_constraintStart_toStartOf="@+id/time_book"
+            app:layout_constraintTop_toTopOf="@+id/textView88" />
+
+        <Button
+            android:id="@+id/book_button_bc"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rectangle_button"
+            android:text="Book"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location_book" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

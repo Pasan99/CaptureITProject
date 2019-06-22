@@ -167,7 +167,7 @@ public class BottomNavigation extends AppCompatActivity  {
                     break;
 
                 case "Complete":
-                    final BottomNavigationView navigation = findViewById(R.id.navigation);
+                    final AHBottomNavigation navigation = findViewById(R.id.navigation);
 
                     Fragment fragmento = null;
                     fragmento = new Feeds();
