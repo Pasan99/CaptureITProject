@@ -9,7 +9,7 @@ system) customers can book the nearest best photographer to have their photoshoo
 
 # Downloads
 <p>Download the Captureit App Apk by clicking this link</p>
-https://github.com/Pasan99/CaptureITProject/raw/master/app-debug.apk
+https://github.com/Pasan99/CaptureITProject/raw/master/downloads/app-debug.apk
 
 # Screenshots
 <img src="images/home_pag3e.PNG" width="200" height="400"><img src="images/login.PNG" width="200" height="400"><img src="images/user_profile.PNG" width="200" height="400"><img src="images/user_profile_edit.PNG" width="200" height="400"><img src="images/settings.PNG" width="200" height="400"><img src="images/select_profession.PNG" width="200" height="400"><img src="images/profile_setup_steps.PNG" width="200" height="400"><img src="images/profile_setup_1.PNG" width="200" height="400"><img src="images/create_packages.PNG" width="200" height="400"><img src="images/package_preview.PNG" width="200" height="400"><img src="images/profile_setup_5_set_availability.PNG" width="200" height="400"><img src="images/search_page.PNG" width="200" height="400"><img src="images/select_booking.PNG" width="200" height="400"><img src="images/favourites_page.PNG" width="200" height="400">
