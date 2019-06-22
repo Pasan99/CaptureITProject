@@ -22,11 +22,52 @@ Language - Java<br>
 Google material Design - https://material.io/<br>
 Android Developers Website - https://developer.android.com/<br>
 Firebase - https://firebase.google.com/<br>
-Design - https://dribbble.com/
-Icons - https://www.flaticon.com/
+Design - https://dribbble.com/<br>
+Icons - https://www.flaticon.com/<br>
 
 # Reffered Youtube channels
 Android Developer - https://www.youtube.com/user/androiddevelopers<br>
 Firebase - https://www.youtube.com/user/Firebase<br>
 Google Design - https://www.youtube.com/channel/UClKO7be7O9cUGL94PHnAeOA<br>
 Google Developer - https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw<br>
+
+# Knowledge Areas Covered
+<h1>Android Development</h1>
+<h2>Views (Works with functions related to these views)</h2>
+<ul>
+  <li>Buttons</li>
+  <li>RecycleView</li>
+  <li>ImageView</li>
+  <li>Text View</li>
+  <li>EditTextView/ Email/ Password and etc</li>
+  <li>CircleImageView</li>
+  <li>Switch</li>
+  <li>Checkbox</li>
+  <li>FloatingAction Button</li>
+  <li>CalendarView</li>
+  <li>ProgressBar</li>
+  <li>Spinner</li>
+  <li>Navigation View</li>
+  <li>GoogleMaps</li>
+</ul>
+<h2>ViewGroups/layout (Works with functions related to these layouts)</h2>
+<ul>
+  <li>Constraint layout</li>
+  <li>Nested Scroll view</li>
+  <li>Fragments</li>
+  <li>Scroll View</li>
+</ul>
+
+<h2>Services</h2>
+<ul>
+  <li>Google Maps API</li>
+  <li>Firebase Real time database</li>
+  <li>Android Services (Vibrator/ Read and Write storage/ Internet Access/ Phone/ Location/ GPS)</li>
+</ul>
+
+<h2>Android Animations</h2>
+<h2>JAVA PROGRAMMING</h2>
+<p>See All java classes that I have created in this project. It will give you rough idea about my programming knowledge and Java language knowlwdge.</p>
+<a href="https://github.com/Pasan99/CaptureITProject/tree/master/app/src/main/java/com/example/pasan/captureitproject">See All</a>
+
+  
